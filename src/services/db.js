@@ -35,7 +35,7 @@ export const streamOrders = (callback) => {
   return onSnapshot(q, (snapshot) => {
     const orders = snapshot.docs.map(doc => ({ id: doc.id, ...doc.data() }));
     callback(orders);
-  });
+  }, (err) => console.error("Stream Orders Error:", err));
 };
 
 export const placeOrder = async (orderData) => {
@@ -52,7 +52,7 @@ export const streamChat = (callback) => {
   return onSnapshot(q, (snapshot) => {
     const messages = snapshot.docs.map(doc => ({ id: doc.id, ...doc.data() }));
     callback(messages);
-  });
+  }, (err) => console.error("Stream Chat Error:", err));
 };
 
 export const sendSilentMessage = async (msgData) => {
@@ -68,7 +68,7 @@ export const streamStaffMessages = (callback) => {
   return onSnapshot(q, (snapshot) => {
     const messages = snapshot.docs.map(doc => ({ id: doc.id, ...doc.data() }));
     callback(messages);
-  });
+  }, (err) => console.error("Stream Staff Error:", err));
 };
 
 export const sendStaffMessage = async (msgData) => {
@@ -87,7 +87,7 @@ export const streamPrStats = (prId, callback) => {
     } else {
       callback(null);
     }
-  });
+  }, (err) => console.error("Stream PR Stats Error:", err));
 };
 
 export const updatePrStats = async (prId, data) => {
@@ -141,7 +141,7 @@ export const streamServiceCalls = (callback) => {
   const q = query(collection(db, "serviceCalls"), where("status", "==", "pending"));
   return onSnapshot(q, (snapshot) => {
     callback(snapshot.docs.map(doc => ({ id: doc.id, ...doc.data() })));
-  });
+  }, (err) => console.error("Stream Service Error:", err));
 };
 
 export const completeServiceCall = async (id) => {
@@ -152,7 +152,7 @@ export const streamCashOrders = (callback) => {
   const q = query(collection(db, "orders"), where("paymentMethod", "==", "cash"), where("status", "==", "pending"));
   return onSnapshot(q, (snapshot) => {
     callback(snapshot.docs.map(doc => ({ id: doc.id, ...doc.data() })));
-  });
+  }, (err) => console.error("Stream Cash Error:", err));
 };
 
 export const confirmCashPayment = async (id) => {
@@ -180,14 +180,14 @@ export const streamReviews = (callback) => {
   const q = query(collection(db, "reviews"), orderBy("timestamp", "desc"));
   return onSnapshot(q, (snapshot) => {
     callback(snapshot.docs.map(doc => ({ id: doc.id, ...doc.data() })));
-  });
+  }, (err) => console.error("Stream Reviews Error:", err));
 };
 
 export const streamUsers = (callback) => {
   const q = query(collection(db, "users"), orderBy("name", "asc"));
   return onSnapshot(q, (snapshot) => {
     callback(snapshot.docs.map(doc => ({ id: doc.id, ...doc.data() })));
-  });
+  }, (err) => console.error("Stream Users Error:", err));
 };
 
 export const updateUser = async (userId, data) => {
@@ -197,6 +197,9 @@ export const updateUser = async (userId, data) => {
 export const streamSystemState = (callback) => {
   return onSnapshot(doc(db, "system", "state"), (doc) => {
     callback(doc.data() || { hackerMode: false });
+  }, (err) => {
+    console.error("Stream System State Error:", err);
+    callback({ hackerMode: false });
   });
 };
 
