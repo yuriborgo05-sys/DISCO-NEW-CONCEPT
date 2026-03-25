@@ -26,15 +26,29 @@ export const AuthProvider = ({ children }) => {
   useEffect(() => {
     // Listen for Firebase Auth changes
     const unsubscribe = onAuthStateChanged(auth, async (fbUser) => {
-      if (fbUser) {
-        const profile = await getUserProfile(fbUser.uid);
-        setUser(profile || { id: fbUser.uid, email: fbUser.email, role: 'user', name: fbUser.displayName || fbUser.email.split('@')[0] });
-      } else {
-        setUser(null);
+      console.log("Auth State Changed:", fbUser ? "User Found" : "No User");
+      try {
+        if (fbUser) {
+          const profile = await getUserProfile(fbUser.uid);
+          setUser(profile || { id: fbUser.uid, email: fbUser.email, role: 'user', name: fbUser.displayName || fbUser.email.split('@')[0] });
+        } else {
+          setUser(null);
+        }
+      } catch (err) {
+        console.error("Profile Fetch Error:", err);
       }
       setLoading(false);
     });
-    return unsubscribe;
+
+    const timer = setTimeout(() => {
+      console.log("Auth Timeout Reached - Forcing UI");
+      setLoading(false);
+    }, 5000);
+
+    return () => {
+      unsubscribe();
+      clearTimeout(timer);
+    };
   }, []);
 
   const login = async (roleOrEmail, password) => {
