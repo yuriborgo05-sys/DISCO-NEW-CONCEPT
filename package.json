@@ -1,0 +1,29 @@
+{
+  "name": "nox-pwa",
+  "private": true,
+  "version": "1.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite --open",
+    "build": "vite build",
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "clsx": "^2.1.0",
+    "firebase": "^12.11.0",
+    "html5-qrcode": "^2.3.8",
+    "lucide-react": "^0.364.0",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "react-router-dom": "^6.22.3",
+    "tailwind-merge": "^2.2.2",
+    "zustand": "^5.0.12"
+  },
+  "devDependencies": {
+    "@types/react": "^18.2.66",
+    "@types/react-dom": "^18.2.22",
+    "@vitejs/plugin-react": "4.3.1",
+    "vite": "5.4.14",
+    "vite-plugin-pwa": "^0.19.0"
+  }
+}

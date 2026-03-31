@@ -1,0 +1,56 @@
+The "--name" option is deprecated (https://vercel.link/name-flag)
+Loading scopes…
+Searching for existing projects…
+> Auto-detected Project Settings for Vite
+
+Linked to yuriborgo05-sys-projects/toomuch-bamboo (created .vercel and added it to .gitignore)
+Deploying yuriborgo05-sys-projects/toomuch-bamboo
+Uploading [--------------------] (0.0B/22MB)
+Uploading [=====---------------] (5.5MB/22MB)
+Uploading [==========----------] (11.0MB/22MB)
+Uploading [===============-----] (16.5MB/22MB)
+Uploading [====================] (22.0MB/22MB)
+Inspect: https://vercel.com/yuriborgo05-sys-projects/toomuch-bamboo/G6MXzTAe6MAGfRCHkPFykBwbMNN9 [35s]
+Production: https://toomuch-bamboo-4iwhl8ekb-yuriborgo05-sys-projects.vercel.app [35s]
+https://toomuch-bamboo-4iwhl8ekb-yuriborgo05-sys-projects.vercel.appBuilding...
+Building...
+Building: Running build in Washington, D.C., USA (East) – iad1
+Building: Build machine configuration: 2 cores, 8 GB
+Building: Retrieving list of deployment files...
+Building: Previous build caches not available.
+Building: Downloading 14989 deployment files...
+Building: Running "vercel build"
+Building: Vercel CLI 50.35.0
+Building: Installing dependencies...
+Building: npm warn deprecated sourcemap-codec@1.4.8: Please use @jridgewell/sourcemap-codec instead
+Building: npm warn deprecated source-map@0.8.0-beta.0: The work that was done in this beta branch won't be included in future versions
+Building: npm warn deprecated glob@11.1.0: Old versions of glob are not supported, and contain widely publicized security vulnerabilities, which have been fixed in the current version. Please update. Support for old versions may be purchased (at exorbitant rates) by contacting i@izs.me
+Building: added 382 packages in 6s
+Building: 101 packages are looking for funding
+Building: run `npm fund` for details
+Building: Running "npm run build"
+Building: > toomuch-bamboo@1.0.0 build
+Building: > vite build
+Building: vite v5.4.14 building for production...
+Building: transforming...
+Building: src/pages/AdminManagement.jsx (2:79): "setDoc" is not exported by "src/services/db.js", imported by "src/pages/AdminManagement.jsx".
+Building: src/pages/AdminManagement.jsx (2:87): "doc" is not exported by "src/services/db.js", imported by "src/pages/AdminManagement.jsx".
+Building: src/pages/AdminManagement.jsx (2:92): "db" is not exported by "src/services/db.js", imported by "src/pages/AdminManagement.jsx".
+Building: ✓ 1528 modules transformed.
+Building: rendering chunks...
+Building: computing gzip size...
+Building: dist/index.html                   1.42 kB │ gzip:   0.64 kB
+Building: dist/assets/index-DecPuNzL.css    7.26 kB │ gzip:   2.33 kB
+Building: dist/assets/index-B7QzLal6.js   402.16 kB │ gzip: 108.61 kB
+Building: ✓ built in 2.62s
+Building: Build Completed in /vercel/output [9s]
+Building: Deploying outputs...
+Building: Deployment completed
+Building: Creating build cache...
+[2K[1A[2K[GProduction: https://toomuch-bamboo-4iwhl8ekb-yuriborgo05-sys-projects.vercel.app [2m]
+Completing...
+Aliased: https://toomuch-bamboo.vercel.app [2m]
+
+Common next commands:
+- `vercel inspect toomuch-bamboo-4iwhl8ekb-yuriborgo05-sys-projects.vercel.app --logs`
+- `vercel redeploy toomuch-bamboo-4iwhl8ekb-yuriborgo05-sys-projects.vercel.app`

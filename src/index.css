@@ -1,0 +1,193 @@
+/* 
+   NOX MULTI-CLUB DESIGN SYSTEM — INDIGO LUXURY
+   Configurable Branding & Premium Web Experience.
+*/
+
+:root {
+  /* Dynamic Configuration Overrides */
+  --accent-color: #8b5cf6;
+  --accent-glow: rgba(139, 92, 246, 0.3);
+  --primary-font: 'Inter', system-ui, -apple-system, sans-serif;
+  
+  /* System Tokens */
+  --bg-dark: #05070a;
+  --bg-card: #0d0f14;
+  --text-primary: #ffffff;
+  --text-secondary: #94a3b8;
+  --success: #10b981;
+  --error: #ef4444;
+  --warning: #f59e0b;
+  --border-card: rgba(255, 255, 255, 0.08);
+  
+  /* Mobile Adjustments */
+  --nav-icon-size: 24px;
+  --card-radius: 24px;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  -webkit-tap-highlight-color: transparent;
+}
+
+body {
+  font-family: var(--primary-font);
+  background-color: var(--bg-dark);
+  color: var(--text-primary);
+  min-height: 100vh;
+  -webkit-font-smoothing: antialiased;
+  overscroll-behavior-y: contain; /* Prevent pull-to-refresh on mobile */
+}
+
+.app-container {
+  max-width: 480px;
+  margin: 0 auto;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background: var(--bg-dark);
+}
+
+.glass-panel, .card {
+  background: var(--bg-card);
+  border: 1px solid var(--border-card);
+  border-radius: var(--card-radius);
+  padding: 1.5rem;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+}
+
+.input-base {
+  width: 100%;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 12px;
+  padding: 0.9rem 1.25rem;
+  color: white;
+  font-size: 1rem;
+  transition: all 0.2s ease;
+}
+
+.input-base:focus {
+  outline: none;
+  border-color: var(--accent-color);
+  background: rgba(255, 255, 255, 0.08);
+}
+
+.btn-primary {
+  width: 100%;
+  background: var(--accent-color);
+  color: white;
+  border: none;
+  border-radius: 14px;
+  padding: 1.1rem;
+  font-weight: 700;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: all 0.2s;
+  box-shadow: 0 0 20px var(--accent-glow);
+}
+
+.btn-primary:active {
+  transform: scale(0.98);
+}
+
+.btn-secondary {
+  width: 100%;
+  background: rgba(255, 255, 255, 0.05);
+  color: white;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 14px;
+  padding: 1.1rem;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+/* Dynamic Island Navigation */
+.dynamic-island-nav {
+  position: fixed;
+  bottom: 2rem;
+  left: 50%;
+  transform: translateX(-50%);
+  width: calc(100% - 2.5rem);
+  max-width: 420px;
+  background: rgba(13, 15, 20, 0.85);
+  backdrop-filter: blur(24px);
+  -webkit-backdrop-filter: blur(24px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 40px;
+  padding: 0.6rem 0.8rem;
+  display: flex;
+  justify-content: space-around;
+  z-index: 1000;
+  box-shadow: 0 15px 45px rgba(0,0,0,0.8), 0 0 20px rgba(0,0,0,0.4);
+}
+
+.nav-item svg {
+  width: var(--nav-icon-size);
+  height: var(--nav-icon-size);
+}
+
+.nav-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+  padding: 0.5rem 1rem;
+  color: var(--text-secondary);
+  transition: color 0.3s;
+}
+
+.nav-item.active {
+  color: var(--accent-color);
+}
+
+.nav-item span {
+  font-size: 0.65rem;
+  font-weight: 600;
+}
+
+.notif-pill {
+  background: rgba(13, 15, 20, 0.95);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  padding: 0.75rem 1.25rem;
+  border-radius: 50px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 0.5rem;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.4);
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.assistant-bubble {
+  position: fixed;
+  bottom: 7rem;
+  right: 1.5rem;
+  width: 56px;
+  height: 56px;
+  background: var(--accent-color);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  box-shadow: 0 4px 15px var(--accent-glow);
+  z-index: 999;
+  cursor: pointer;
+}
+
+/* Utility */
+.flex { display: flex; }
+.justify-between { justify-content: space-between; }
+.items-center { align-items: center; }
+.gap-2 { gap: 0.5rem; }
+.p-4 { padding: 1rem; }

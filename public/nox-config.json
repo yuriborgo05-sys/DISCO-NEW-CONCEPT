@@ -1,0 +1,19 @@
+{
+  "clubName": "NOX",
+  "clubLogo": "/nox-logo.png",
+  "themeColor": "#8b5cf6",
+  "primaryFont": "'Inter', sans-serif",
+  "slogan": "control the night",
+  "pwa": {
+    "shortName": "NOX",
+    "description": "Premium Nightlife Experience - Control the Night",
+    "backgroundColor": "#05070a",
+    "display": "standalone",
+    "orientation": "portrait"
+  },
+  "ui": {
+    "iconSize": "24px",
+    "borderRadius": "16px",
+    "glassEffect": "blur(20px)"
+  }
+}
